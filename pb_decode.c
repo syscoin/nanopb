@@ -1413,8 +1413,8 @@ static bool checkreturn pb_dec_bytes(pb_istream_t *stream, const pb_field_iter_t
     if (!pb_decode_varint32(stream, &size))
         return false;
     
-    if (size > PB_SIZE_MAX)
-        PB_RETURN_ERROR(stream, "bytes overflow");
+    //if (size > PB_SIZE_MAX)
+    //    PB_RETURN_ERROR(stream, "bytes overflow");
     
     alloc_size = PB_BYTES_ARRAY_T_ALLOCSIZE(size);
     if (size > alloc_size)
@@ -1432,8 +1432,8 @@ static bool checkreturn pb_dec_bytes(pb_istream_t *stream, const pb_field_iter_t
     }
     else
     {
-        if (alloc_size > field->data_size)
-            PB_RETURN_ERROR(stream, "bytes overflow");
+        //if (alloc_size > field->data_size)
+        //    PB_RETURN_ERROR(stream, "bytes overflow");
         dest = (pb_bytes_array_t*)field->pData;
     }
 
@@ -1508,8 +1508,8 @@ static bool checkreturn pb_dec_fixed_length_bytes(pb_istream_t *stream, const pb
     if (!pb_decode_varint32(stream, &size))
         return false;
 
-    if (size > PB_SIZE_MAX)
-        PB_RETURN_ERROR(stream, "bytes overflow");
+    //if (size > PB_SIZE_MAX)
+    //    PB_RETURN_ERROR(stream, "bytes overflow");
 
     if (size == 0)
     {
